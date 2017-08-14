@@ -7,9 +7,6 @@
 //
 
 import UIKit
-
-
-
 extension Bundle{     // 写在类的外面,用关键字 extension 修饰,后面跟随着对应的类,然后在{}里面扩展
     
     func getSpaceName()->String{      // 扩展一个函数
@@ -29,7 +26,6 @@ extension Bundle{     // 写在类的外面,用关键字 extension 修饰,后面
         }
     }
 }
-
 
 protocol ViewControllerDelegate{     // ViewControllerDelegate:协议的名字
     
