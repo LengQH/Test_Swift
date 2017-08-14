@@ -8,7 +8,33 @@
 
 import UIKit
 
-class TestClass: NSObject {
+struct  PersonDesc{
+    
+    var yourName:String
+    var yourHobby:String
+    var yourAge:Int
+    
+    //  subscript+(形参列表)+返回值+{ 里面返回类型值 }
+    
+    subscript(indexNumber:Int)->Int{   // 写法可以理解为函数的函数名直接变成关键字subscript,去掉了函数关键字func,其他照旧
+        return yourAge-indexNumber;
+    }
+    subscript(name:String,hobby:String)->String{
+        return "他的名字叫:"+name+","+"他的爱好是:"+hobby   // 直接拼接字符串
+    }
+}
+
+class TestClass: NSObject {   // 继承于NSObject
+
+    
+    subscript(play:String,eat:Int)->String{
+        
+        // String(eat) 是将Int类型eat转为字符串
+        
+        return "在一个类中使用脚本下标,传进来的第一个参数值是:"+play+"第二个参数值是:"+String(eat);
+    }
+    
+    
     
     // 在Swift中定义一个属性的时候如果没有初始化,那么必须在属性类型的后面加上一个?,表示可选
     // Swift中要求属性必须是要有初始值的,但是只要在构造方法中对属性进行了初始化,那么就不用写 ?
@@ -37,4 +63,9 @@ class TestClass: NSObject {
         self.hobby=hobby
         
     }
+    
+    
+    
+    
+    
 }

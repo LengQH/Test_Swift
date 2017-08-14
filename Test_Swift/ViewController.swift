@@ -9,6 +9,7 @@
 import UIKit
 
 
+
 extension Bundle{     // 写在类的外面,用关键字 extension 修饰,后面跟随着对应的类,然后在{}里面扩展
     
     func getSpaceName()->String{      // 扩展一个函数
@@ -30,8 +31,31 @@ extension Bundle{     // 写在类的外面,用关键字 extension 修饰,后面
 }
 
 
+protocol ViewControllerDelegate{     // ViewControllerDelegate:协议的名字
+    
+    var fight:String{ get set }      //  协议中的属性可读可写
+    func proMethod(stringParam:String)->String    // 协议中的方法
+    
+    // mutating关键字作为函数的前缀，写在func之前，表示可以在该方法中修改它所属的实例及其实例属性的值。
+    mutating func changeMethod(intValue:Int)
+    
+}
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,ViewControllerDelegate {
+    
+   // 遵守协议
+    var fight: String = "打架"
+    
+    func proMethod(stringParam: String) -> String {
+        print("协议中的参数值:\(stringParam)")
+        return "协议拼接值:"+stringParam;
+    }
+    func changeMethod(intValue: Int) {  // 类方法前不需要加mutating,因为类是引用类型
+        fight="小明和小米在"+fight+String(intValue)
+        print(fight)
+    }
+    
+    
     
     struct AboutMe{        //  AboutMe是结构体的名字,通过名字方法访问结构体成员
         
@@ -170,9 +194,15 @@ class ViewController: UIViewController {
         
 //        easyUseEnum()        // 直接通过函数名调用函数,去掉了self.
         
-        easyUseStruct()
+//        easyUseStruct()
         
 //        easyUseProperty()
+        
+//        easyUseSubscript()
+        
+//        easyUseInherit()
+        
+//        easyUseTypeChange()
         
 //        easyUseLazyLoad()
         
@@ -181,7 +211,8 @@ class ViewController: UIViewController {
 //        easyUseStringLoadViewController()
         
 //        easyUseExtension()
-        
+
+        easyUseProtocol()
         
         
     }
@@ -615,12 +646,13 @@ class ViewController: UIViewController {
     // MARK: 简单的使用结构体
     func easyUseStruct(){
         
-        let defaultMe=AboutMe();   // 我上面给了默认的值,所以可以直接调用
+        let defaultMe=AboutMe();   // 我上面给了默认的值,所以可以直接调用(直接初始化了)
         print("默认的我的名字:\(defaultMe.myName) 我的爱好:\(defaultMe.myHobby)")
         
 //  如果结构体没有初始化对应的各个值,那么只能通过下面的init方法去赋对应的值,然后去访问其成员。如果有,就可以通过上面的代码直接访问其成员
 //  因为我上面的定义中初始化给了值,所以上下的代码都是可以调用其成员的
 
+        // AboutMe.init 是初始化结构体
         let ming=AboutMe.init(myName: "小明", myHobby: "顶老师", myAge: 16, myHeight: 162.8, aboutOther: "打游戏");
         print("小明的爱好:\(ming.myHobby) 和身高:\(ming.myHeight)")
         
@@ -640,6 +672,51 @@ class ViewController: UIViewController {
         print("get方法 得到的值:\(yourHobby)")  // 和上面一样,走的是 get 方法 其值永远是: Optional("属性赋值")
         
         youAction="游泳"
+    }
+    // MARK: 简单的使用下标脚本
+    func easyUseSubscript(){
+        
+        // 初始化结构体
+        let struceDesc=PersonDesc.init(yourName: "赵云", yourHobby: "吾乃常山赵子龙是也!", yourAge: 28)
+        
+        let subIndexValue=struceDesc[10];          // 使用下标脚本
+        let hisDes=struceDesc["吕布","貂蝉是我的!"]
+        
+        print("十年前的他是:\(subIndexValue)岁")
+        print("结构体中使用下标脚本返回的值:\(hisDes)")
+        
+        let testClass=TestClass.init();                 // 使用下标脚本一定要先初始化,然后再调用
+        let backStringValue=testClass["学无止境",22];    //  可以将下标脚本理解为一种特殊的函数
+        
+        print("类中使用下标脚本返回的值:\(backStringValue)")
+
+        
+    }
+    // MARK: 简单的使用继承
+    func easyUseInherit(){
+        
+        let baseWithInit=baseClass.init();   // 初始化基类
+        baseWithInit.eatFood="🍎的味道-酸甜"
+        print("基类中的吃的属性值:\(baseWithInit.eatFood!)")  // !是强制解析可选(Option)值
+        
+        let sonClass=SonClass.init()
+        sonClass.fatherMethod(someThing: "老铁,玩🐍")  // 调用重写的父类的方法
+    }
+    // MARK: 简单的使用类型的转换
+    func easyUseTypeChange(){
+        
+        let sonClass=SonClass.init();
+        let grandClass=Grandson.init();
+        grandClass.playString="玩手机"
+        
+        // is as! 还有 as?后面一定是一个类的类型
+    
+        if sonClass is baseClass {  //  is:检查sonClass是否是baseClass类型(true,因为继承)
+            print("是其子类")
+        }
+        let newObj=grandClass as! SonClass   // as? 是不确定转为某个类的类型,转失败就返回nil, as！是强制转换,失败就奔溃
+
+        print( "玩的属性值:\(newObj.playString!),还是孙子类哦 \(grandClass)")
     }
     // MARK: 简单的使用懒加载
     func easyUseLazyLoad(){
@@ -708,6 +785,18 @@ class ViewController: UIViewController {
         
         let paramValue:String!=Bundle.main.useAddAParam    //  使用扩展的 属性
         print("扩展的属性得到的值是:\(paramValue)")
+    }
+    // MARK: 简单的使用协议
+    func easyUseProtocol(){
+        
+        let vcClass=ViewController()
+        let backValue=vcClass.proMethod(stringParam: "IOS开发者")  // 调用协议中的函数
+        print(backValue)
+        vcClass.changeMethod(intValue: 22)
+        
+        var arr:[String]=["元素一","元素一","元素一","元素一"]   // 数字里面只能存 String类型 泛型字符串数组
+        print("数组泛型里面的值:\(arr)")
+        
     }
 }
 
