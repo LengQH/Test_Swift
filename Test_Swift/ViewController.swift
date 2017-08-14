@@ -794,7 +794,8 @@ class ViewController: UIViewController,ViewControllerDelegate {
         print(backValue)
         vcClass.changeMethod(intValue: 22)
         
-        var arr:[String]=["元素一","元素一","元素一","元素一"]   // 数字里面只能存 String类型 泛型字符串数组
+        
+        let arr:[String]=["元素一","元素一","元素一","元素一"]   // 数字里面只能存 String类型 泛型字符串数组
         print("数组泛型里面的值:\(arr)")
         
     }
