@@ -158,10 +158,14 @@ class ViewController: UIViewController,ViewControllerDelegate {
 //        self.easyUseDictionary()
 //        self.easyUseString()
         
+        
+        
         // 函数的调用: self.函数名 或者 直接函数名
 //        self.paramFunction(num1: 22, string2: "Leng")
 //        let backFuncValue=paramAndBackValueFunction(param1: "我在", param2: "这里")
 //        print("返回的函数值:\(backFuncValue)")
+        
+//        TestClass.classMethod(stringName: "China is good")
     
 //        self.easyUseClosePackage()
         
@@ -208,7 +212,7 @@ class ViewController: UIViewController,ViewControllerDelegate {
         
 //        easyUseExtension()
 
-        easyUseProtocol()
+//        easyUseProtocol()
         
         
     }

@@ -64,8 +64,9 @@ class TestClass: NSObject {   // 继承于NSObject
         
     }
     
-    
-    
-    
+    // MARK:定义一个类方法(关键字 class 修饰)
+    class func classMethod(stringName:String){
+        print("执行类方法，传进来的值:\(stringName)")
+    }
     
 }
