@@ -214,6 +214,8 @@ class ViewController: UIViewController,ViewControllerDelegate {
 
 //        easyUseProtocol()
         
+//        easyUseSingleton()
+        
         
     }
     // MARK: 简单的定义常量和变量
@@ -797,6 +799,23 @@ class ViewController: UIViewController,ViewControllerDelegate {
         
         let arr:[String]=["元素一","元素一","元素一","元素一"]   // 数字里面只能存 String类型 泛型字符串数组
         print("数组泛型里面的值:\(arr)")
+        
+    }
+    // MARK: 简单的使用单例
+    func easyUseSingleton(){
+        
+        let singOne=MySingleton.shareSingleton
+        let singTwo=MySingleton.shareSingleton
+        print("单例一的地址:\(singOne) 单例二的地址:\(singTwo)")
+        
+        let classOne=SingletonClass.shareClass
+        let classTwo=SingletonClass.shareClass
+        print("单例一的地址:\(classOne) 单例二的地址:\(classTwo)")
+        
+        let otherOne=SingletonClassWithOther.shareOther
+        let otherTwo=SingletonClassWithOther.shareOther
+        print("单例一的地址:\(otherOne) 单例二的地址:\(otherTwo)")
+        
         
     }
 }
