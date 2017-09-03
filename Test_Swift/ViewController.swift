@@ -214,7 +214,7 @@ class ViewController: UIViewController,ViewControllerDelegate {
 
 //        easyUseProtocol()
         
-//        easyUseSingleton()
+        easyUseSingleton()
         
         
     }

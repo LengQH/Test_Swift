@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85135C111F5BE2DE00FB1FA6 /* MySingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85135C101F5BE2DE00FB1FA6 /* MySingleton.swift */; };
 		851B1C7C1F3C90ED0088E079 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B1C7B1F3C90ED0088E079 /* TestClass.swift */; };
 		851B1C7E1F3CA3040088E079 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B1C7D1F3CA3040088E079 /* IndexViewController.swift */; };
 		851B1C801F3CA3110088E079 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B1C7F1F3CA3110088E079 /* CircleViewController.swift */; };
@@ -18,11 +19,11 @@
 		852C43C11F34CB3700552CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852C43BF1F34CB3700552CC5 /* Main.storyboard */; };
 		852C43C31F34CB3700552CC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852C43C21F34CB3700552CC5 /* Assets.xcassets */; };
 		852C43C61F34CB3700552CC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852C43C41F34CB3700552CC5 /* LaunchScreen.storyboard */; };
-		8599D9091F59ABA0004F6E41 /* MySingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599D9081F59ABA0004F6E41 /* MySingleton.swift */; };
 		85F7CC6B1F4083AF005DC58F /* SonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F7CC6A1F4083AF005DC58F /* SonClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85135C101F5BE2DE00FB1FA6 /* MySingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySingleton.swift; sourceTree = "<group>"; };
 		851B1C7B1F3C90ED0088E079 /* TestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		851B1C7D1F3CA3040088E079 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		851B1C7F1F3CA3110088E079 /* CircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		852C43C21F34CB3700552CC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		852C43C51F34CB3700552CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		852C43C71F34CB3700552CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8599D9081F59ABA0004F6E41 /* MySingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySingleton.swift; sourceTree = "<group>"; };
 		85F7CC6A1F4083AF005DC58F /* SonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +75,7 @@
 				851B1C7B1F3C90ED0088E079 /* TestClass.swift */,
 				85F7CC6A1F4083AF005DC58F /* SonClass.swift */,
 				852262511F40946F0069A5E0 /* Grandson.swift */,
-				8599D9081F59ABA0004F6E41 /* MySingleton.swift */,
+				85135C101F5BE2DE00FB1FA6 /* MySingleton.swift */,
 				851B1C7D1F3CA3040088E079 /* IndexViewController.swift */,
 				851B1C7F1F3CA3110088E079 /* CircleViewController.swift */,
 				851B1C811F3CA31A0088E079 /* MessageViewController.swift */,
@@ -163,7 +163,7 @@
 				852C43BE1F34CB3700552CC5 /* ViewController.swift in Sources */,
 				851B1C7C1F3C90ED0088E079 /* TestClass.swift in Sources */,
 				851B1C801F3CA3110088E079 /* CircleViewController.swift in Sources */,
-				8599D9091F59ABA0004F6E41 /* MySingleton.swift in Sources */,
+				85135C111F5BE2DE00FB1FA6 /* MySingleton.swift in Sources */,
 				852C43BC1F34CB3700552CC5 /* AppDelegate.swift in Sources */,
 				851B1C841F3CA3270088E079 /* MyCenterViewController.swift in Sources */,
 				852262521F40946F0069A5E0 /* Grandson.swift in Sources */,
