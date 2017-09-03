@@ -144,9 +144,8 @@ class ViewController: UIViewController,ViewControllerDelegate {
     
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-    
+        super.viewDidLoad()
         
 //        self.easydefLetAndVar()        // 这里的self.都是可以去掉的,直接通过函数名去调用方法
 //        self.easyChangeMathType()
@@ -157,8 +156,6 @@ class ViewController: UIViewController,ViewControllerDelegate {
 //        self.easyUseArray()
 //        self.easyUseDictionary()
 //        self.easyUseString()
-        
-        
         
         // 函数的调用: self.函数名 或者 直接函数名
 //        self.paramFunction(num1: 22, string2: "Leng")
@@ -214,7 +211,7 @@ class ViewController: UIViewController,ViewControllerDelegate {
 
 //        easyUseProtocol()
         
-        easyUseSingleton()
+//        easyUseSingleton()
         
         
     }
