@@ -147,6 +147,10 @@ class ViewController: UIViewController,ViewControllerDelegate {
         
         super.viewDidLoad()
         
+        view.backgroundColor=UIColor.white
+        
+        LogMsgWithDebug("打开我下面对应方法注释,看各个函数调用效果")
+        
 //        self.easydefLetAndVar()        // 这里的self.都是可以去掉的,直接通过函数名去调用方法
 //        self.easyChangeMathType()
 //        self.easyUseBoolAndSwitchType()
@@ -812,7 +816,6 @@ class ViewController: UIViewController,ViewControllerDelegate {
         let otherOne=SingletonClassWithOther.shareOther
         let otherTwo=SingletonClassWithOther.shareOther
         print("单例一的地址:\(otherOne) 单例二的地址:\(otherTwo)")
-        
         
     }
 }
