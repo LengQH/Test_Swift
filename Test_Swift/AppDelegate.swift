@@ -18,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window=UIWindow.init(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+//        window?.rootViewController=ViewController()   // Swift3.0简单的使用(EasySwift)
         
-        window?.rootViewController=ViewController()   // 简单Swift3.0的使用(EasySwift)
+        window?.rootViewController=FirstTestViewController()   // 属性 函数(方法) 闭包 代理 通知传值
         
         return true
     }
